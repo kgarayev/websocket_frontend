@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# WebSocket Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a WebSocket frontend application built with React. The application facilitates real-time communication between users through a WebSocket connection.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **React**: React is a popular JavaScript library for building user interfaces. It provides a structured and efficient way to create interactive web applications.
 
-### `npm start`
+- **WebSocket**: The frontend uses the WebSocket protocol to establish a connection with the WebSocket backend server, enabling real-time messaging.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **JavaScript (ES6+)**: The application is written in modern JavaScript, including ES6+ features, to create a clean and maintainable codebase.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **useState Hook**: React's `useState` hook is used to manage and update state variables, allowing for dynamic user interactions and rendering.
 
-### `npm test`
+- **WebSocket API**: The standard WebSocket API is employed to create, configure, and manage WebSocket connections, enabling bidirectional communication between the frontend and backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React Components**: The application is structured using React components to encapsulate functionality and improve code organization and readability.
 
-### `npm run build`
+- **JSON Serialization**: JSON (JavaScript Object Notation) is used to serialise and deserialise messages exchanged with the WebSocket server, ensuring data consistency and compatibility.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How it Works
+The frontend application allows users to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Enter a username and join a chat room.
+2. See a list of active users in the chat room.
+3. Send messages to other users in real-time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Key components of the application include:
 
-### `npm run eject`
+- **useState**: React's `useState` hook is used to manage state variables, such as `userName`, `activeUsers`, `connection`, `activeUser`, `socket`, and `userToUserMessage`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **WebSocket Connection**: The application establishes a WebSocket connection to the backend server when the user clicks the "Join chat" button. It sends the `NEW_USER` command with the user's chosen username to the server.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Message Handling**: The frontend listens for incoming WebSocket messages and processes them based on their commands. It handles messages related to user lists (`USER_LIST`) and user-to-user messages (`USER_TO_USER_MESSAGE`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **User Interaction**: Users can select an active user from the list and send messages directly to them. The application updates the user interface in real-time to display messages received from other users.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This WebSocket frontend provides a foundation for building real-time chat applications and can be extended and customised to suit specific requirements.
