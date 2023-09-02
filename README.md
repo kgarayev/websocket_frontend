@@ -1,4 +1,4 @@
-# WebSocket Frontend
+# WebSocket Frontend :speech_balloon: 
 
 This repository contains a WebSocket frontend application built with React. The application facilitates real-time communication between users through a WebSocket connection.
 
